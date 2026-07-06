@@ -1,3 +1,116 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// The quartz-themes plugin (github:saberzero1/quartz-themes, "default"
+// theme) ships its own Obsidian-style CSS in higher-priority @layers
+// (obsidian-theme, quartz-themes-base, obsidian-theme-overrides) that
+// otherwise override quartz.config.yaml's colors, which compile into the
+// lowest-priority quartz-base layer (this file's own output included,
+// since Quartz nests custom.scss inside that same layer too). @layer
+// priority reverses for !important declarations — earlier layers win — so
+// marking these !important is what makes quartz-base (declared first)
+// beat the plugin's later layers.
+//
+// The "default" theme has no styleSettingsId, so the plugin's own
+// styleSettings override option (its sanctioned per-theme customization
+// mechanism) isn't available here. Its accent/link colors all derive from
+// --accent-h/-s/-l via var()/calc() (hardcoded to hue 258, Obsidian's
+// purple) rather than from Quartz's own --secondary/--tertiary, so those
+// need overriding too, not just Quartz's native color variables.
+// Identical in both modes — declared once, unscoped, rather than repeated
+// in the light/dark blocks below (which only need to carry the values
+// that actually differ between modes).
+:root {
+  --gray: #d4a882 !important;
+  --secondary: #c97d5a !important;
+  --highlight: rgba(201, 125, 90, 0.15) !important;
+  --textHighlight: #c97d5a88 !important;
+  --accent-h: 19 !important;
+  --accent-s: 51% !important;
+  --accent-l: 57% !important;
+}
+
+:root {
+  --light: #f7f4ee !important;
+  --lightgray: #e8d9c5 !important;
+  --darkgray: #262230 !important;
+  --dark: #18151a !important;
+  --tertiary: #8a4f3f !important;
+}
+
+:root[saved-theme="dark"] {
+  --light: #18151a !important;
+  --lightgray: #262230 !important;
+  --darkgray: #ede8df !important;
+  --dark: #f7f4ee !important;
+  --tertiary: #d4a882 !important;
+}
+
+// The Loop's mark, stacked above the site title in the sidebar header.
+// PageTitle (github:quartz-community/page-title) renders plain text with
+// no image slot, so the mark is added as a ::before on .page-title,
+// recolored via mask-image + background-color so it tracks --dark
+// (the same variable the title text itself uses) across light/dark mode.
+h2.page-title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  text-align: center !important;
+}
+
+h2.page-title::before {
+  content: "" !important;
+  display: block !important;
+  width: 44px !important;
+  height: 24px !important;
+  background-color: var(--dark) !important;
+  -webkit-mask-image: url("/static/logo-mark.svg") !important;
+  mask-image: url("/static/logo-mark.svg") !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+}
+
+// In the mobile header/menu the sidebar collapses to a horizontal bar, so
+// the stacked/centered layout above doesn't fit — put the mark and title
+// back on one line, left-aligned, there.
+//
+// The theme's translated `.inline-title` rule also targets h2.page-title
+// and sets margin-block-end (a logical property, distinct from the
+// margin-bottom/margin shorthand physical longhands) from
+// --inline-title-margin-bottom — the `margin` shorthand below doesn't
+// touch it, so it's zeroed explicitly here.
+@media #{$mobile} {
+  h2.page-title {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+
+    a {
+        margin: 0 !important;
+        margin-block-end: 0 !important;
+    }
+  }
+}
+
+.breadcrumb-container {
+  margin-bottom: 1rem;
+}
+
+.note-properties-header {
+  margin-bottom: 1rem;
+}
+// quartz-themes sets margin-bottom on this selector too (higher-priority
+// layer, non-important) — needs !important to actually win, unlike the
+// other rules in this block which the theme doesn't touch.
+.note-properties-table {
+  margin-bottom: 1rem !important;
+}
+
+.note-properties[open] > .note-properties-header{
+  border-bottom: none;
+}
