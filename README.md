@@ -1,17 +1,24 @@
-# Quartz v5
+# The Loop Wiki
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+This repo publishes [wiki.theloop.community](https://wiki.theloop.community),
+the public wiki for The Loop's DJ course. Its `gh-pages` branch is what
+GitHub Pages serves; `main` holds the site config and theme.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+Content is filtered and pushed here from a shared Obsidian vault by tooling
+in a separate repo, [`theloopwiki-tools`](https://github.com/djsprenk/theloopwiki-tools).
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+Built with [Quartz](https://quartz.jzhao.xyz/), a static site generator for
+publishing digital gardens and notes.
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## Local development
 
-## Sponsors
+To preview the site with content already filtered into `../content` (see
+`theloopwiki-tools`'s `publish.sh` / `filter.py`), run from this directory:
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+```
+npx quartz build --serve --directory ../content
+```
+
+This builds and serves the site locally with live-reload, without deploying
+anything. Use it to iterate on theme/config changes in `quartz.config.yaml`
+and `quartz/styles/`.
