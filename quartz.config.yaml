@@ -180,11 +180,6 @@ plugins:
     layout:
       position: beforeBody
       priority: 30
-  - source: github:quartz-community/page-title
-    enabled: true
-    layout:
-      position: left
-      priority: 10
   - source: github:quartz-community/darkmode
     enabled: true
     layout:
@@ -275,6 +270,13 @@ plugins:
       unlistWhenEncrypted: false
       outputPath: static/encryptedContentIndex.json
     order: 900
+  - source: ./local-plugins/page-title
+    enabled: true
+    options: {}
+    order: 50
+    layout:
+      position: left
+      priority: 10
 layout:
   groups:
     toolbar:

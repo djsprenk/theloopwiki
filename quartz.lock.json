@@ -194,10 +194,10 @@
       "installedAt": "2026-07-06T15:23:01.920Z"
     },
     "page-title": {
-      "source": "github:quartz-community/page-title",
-      "resolved": "https://github.com/quartz-community/page-title.git",
-      "commit": "a1c1fe0a9c6a5ce1acf6efa01d473a7d9850e2a3",
-      "installedAt": "2026-07-06T15:23:06.003Z"
+      "source": "./local-plugins/page-title",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/page-title",
+      "commit": "local",
+      "installedAt": "2026-07-07T21:27:22.355Z"
     },
     "quartz-themes": {
       "source": {

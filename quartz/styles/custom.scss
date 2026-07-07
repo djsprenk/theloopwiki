@@ -76,7 +76,10 @@ h2.page-title::before {
 
 // In the mobile header/menu the sidebar collapses to a horizontal bar, so
 // the stacked/centered layout above doesn't fit — put the mark and title
-// back on one line, left-aligned, there.
+// back on one line, left-aligned, there. "The Loop Wiki" plus the mark
+// doesn't fit the narrow bar, so only the last word ("Wiki") is kept —
+// the local page-title fork (local-plugins/page-title) splits the title
+// into .page-title-leading/.page-title-last spans for exactly this.
 //
 // The theme's translated `.inline-title` rule also targets h2.page-title
 // and sets margin-block-end (a logical property, distinct from the
@@ -94,6 +97,10 @@ h2.page-title::before {
         margin: 0 !important;
         margin-block-end: 0 !important;
     }
+  }
+
+  .page-title-leading {
+    display: none !important;
   }
 }
 
