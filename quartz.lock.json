@@ -86,10 +86,10 @@
       "installedAt": "2026-07-06T15:23:01.059Z"
     },
     "darkmode": {
-      "source": "github:quartz-community/darkmode",
-      "resolved": "https://github.com/quartz-community/darkmode.git",
-      "commit": "c6484f72ebc6ea89339be7cf86ad14b40c47dcc7",
-      "installedAt": "2026-07-06T15:23:06.141Z"
+      "source": "./local-plugins/darkmode",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/darkmode",
+      "commit": "local",
+      "installedAt": "2026-07-07T22:00:09.624Z"
     },
     "description": {
       "source": "github:quartz-community/description",
