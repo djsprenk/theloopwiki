@@ -134,10 +134,10 @@
       "installedAt": "2026-07-06T15:23:02.235Z"
     },
     "footer": {
-      "source": "github:quartz-community/footer",
-      "resolved": "https://github.com/quartz-community/footer.git",
-      "commit": "6ed61928d3c0178d7cef972ebcbca6a206a2f065",
-      "installedAt": "2026-07-06T15:23:06.515Z"
+      "source": "./local-plugins/footer",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/footer",
+      "commit": "local",
+      "installedAt": "2026-07-07T16:22:50.370Z"
     },
     "github-flavored-markdown": {
       "source": "github:quartz-community/github-flavored-markdown",
