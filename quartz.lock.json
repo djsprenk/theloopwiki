@@ -110,10 +110,10 @@
       "installedAt": "2026-07-06T15:23:02.340Z"
     },
     "explorer": {
-      "source": "github:quartz-community/explorer",
-      "resolved": "https://github.com/quartz-community/explorer.git",
-      "commit": "a2dfd1373abe58ace461ebea0b4e94cb287f894e",
-      "installedAt": "2026-07-06T15:23:03.848Z"
+      "source": "./local-plugins/explorer",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/explorer",
+      "commit": "local",
+      "installedAt": "2026-07-07T21:41:27.066Z"
     },
     "favicon": {
       "source": "github:quartz-community/favicon",
