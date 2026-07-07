@@ -25,8 +25,14 @@
   min-height: 1.2rem;
   flex: 0 1 auto;
 }
-.explorer.collapsed {
-  flex: 0 1 1.2rem;
+// Collapsing used to shrink the whole flex item to a fixed 1.2rem and rely
+// on overflow-y: hidden to clip everything past that - but the toggle
+// button itself (icon + h2) renders taller than 1.2rem, so its own bottom
+// edge got clipped along with the file list. Hiding just the file list and
+// letting the container size to its one remaining child (the button) avoids
+// clipping the button no matter how tall its font/icon end up being.
+.explorer.collapsed > .explorer-content {
+  display: none;
 }
 .explorer.collapsed .fold {
   transform: rotateZ(-90deg);
