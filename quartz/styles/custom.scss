@@ -114,3 +114,11 @@ h2.page-title::before {
 .note-properties[open] > .note-properties-header{
   border-bottom: none;
 }
+
+audio,
+video,
+.external-embed.youtube,
+iframe.pdf {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
