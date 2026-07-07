@@ -98,10 +98,10 @@
       "installedAt": "2026-07-06T15:23:01.075Z"
     },
     "encrypted-pages": {
-      "source": "github:quartz-community/encrypted-pages",
-      "resolved": "https://github.com/quartz-community/encrypted-pages.git",
-      "commit": "89e88af565dfaa9ab2d9c99677b82394ea7be356",
-      "installedAt": "2026-07-06T15:23:02.651Z"
+      "source": "./local-plugins/encrypted-pages",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/encrypted-pages",
+      "commit": "local",
+      "installedAt": "2026-07-07T18:54:19.313Z"
     },
     "explicit-publish": {
       "source": "github:quartz-community/explicit-publish",
