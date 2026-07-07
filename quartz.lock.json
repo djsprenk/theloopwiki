@@ -122,10 +122,10 @@
       "installedAt": "2026-07-06T15:23:03.191Z"
     },
     "folder-page": {
-      "source": "github:quartz-community/folder-page",
-      "resolved": "https://github.com/quartz-community/folder-page.git",
-      "commit": "93304d22e1d7f09f93a33658ec273f7cb8d17793",
-      "installedAt": "2026-07-06T15:23:03.758Z"
+      "source": "./local-plugins/folder-page",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/folder-page",
+      "commit": "local",
+      "installedAt": "2026-07-07T17:43:54.534Z"
     },
     "fonts": {
       "source": "github:quartz-community/fonts",

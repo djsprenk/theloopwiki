@@ -147,8 +147,6 @@ plugins:
     enabled: true
   - source: github:quartz-community/content-page
     enabled: true
-  - source: github:quartz-community/folder-page
-    enabled: true
   - source: github:quartz-community/tag-page
     enabled: true
   - source: github:quartz-community/explorer
@@ -269,6 +267,12 @@ plugins:
     enabled: true
     options:
       links: {}
+    order: 50
+  - source: ./local-plugins/folder-page
+    enabled: true
+    options:
+      showFolderCount: true
+      showSubfolders: true
     order: 50
 layout:
   groups:
