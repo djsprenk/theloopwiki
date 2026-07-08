@@ -150,11 +150,6 @@ plugins:
       group: toolbar
       groupOptions:
         grow: true
-  - source: github:quartz-community/backlinks
-    enabled: true
-    layout:
-      position: right
-      priority: 50
   - source: github:quartz-community/article-title
     enabled: true
     layout:
@@ -316,6 +311,16 @@ plugins:
     layout:
       position: right
       priority: 10
+  - source: ./local-plugins/backlinks
+    enabled: true
+    options:
+      hideWhenEmpty: true
+      disabledPathPrefixes:
+        - the-loop-academy
+    order: 50
+    layout:
+      position: right
+      priority: 30
 layout:
   groups:
     toolbar:

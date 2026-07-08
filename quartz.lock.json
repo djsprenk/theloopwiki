@@ -14,10 +14,10 @@
       "installedAt": "2026-07-06T15:23:05.182Z"
     },
     "backlinks": {
-      "source": "github:quartz-community/backlinks",
-      "resolved": "https://github.com/quartz-community/backlinks.git",
-      "commit": "7490f921b7bd974c3f2f985ad3744b06160827d6",
-      "installedAt": "2026-07-06T15:23:05.244Z"
+      "source": "./local-plugins/backlinks",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/backlinks",
+      "commit": "local",
+      "installedAt": "2026-07-08T03:10:19.806Z"
     },
     "bases-page": {
       "source": "github:quartz-community/bases-page",
