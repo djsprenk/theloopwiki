@@ -146,10 +146,10 @@
       "installedAt": "2026-07-06T15:23:01.235Z"
     },
     "graph": {
-      "source": "github:quartz-community/graph",
-      "resolved": "https://github.com/quartz-community/graph.git",
-      "commit": "46f0ba1c3c0cc484697572e7bcf315fa384d80d2",
-      "installedAt": "2026-07-06T15:23:04.126Z"
+      "source": "./local-plugins/graph",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/graph",
+      "commit": "local",
+      "installedAt": "2026-07-08T03:10:18.353Z"
     },
     "hard-line-breaks": {
       "source": "github:quartz-community/hard-line-breaks",
