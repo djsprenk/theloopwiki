@@ -9,7 +9,31 @@
   .page > #quartz-body .sidebar.left:has(.explorer) {
     box-sizing: border-box;
     position: sticky;
-    background-color: var(--light);
+    // Matches the left sidebar's own desktop-mode background, so the
+    // mobile collapsed bar reads as the same surface rather than a
+    // distinct floating panel. That's --background-secondary (#f6f6f6
+    // light / #282828 dark), not --light — quartz-themes
+    // (github:saberzero1/quartz-themes) sets `div.sidebar { background-color:
+    // var(--background-secondary); }` unconditionally (no media query) in
+    // its own compiled CSS, which is what actually paints the desktop
+    // sidebar; --light is just the page/body background and happens to be
+    // a different, warmer color in this site's palette (see custom.scss).
+    //
+    // !important is required: quartz-themes also sets `.page >
+    // div#quartz-body div.sidebar.left { background-color: transparent;
+    // }` at this same mobile breakpoint, in a CSS @layer declared after
+    // quartz-base (the layer this file's own output compiles into, per
+    // componentResources.ts wrapping every component's CSS in `@layer
+    // quartz-base`). Later layers beat earlier ones for normal
+    // declarations regardless of specificity, so without !important that
+    // transparent rule always wins outright and this background-color has
+    // no visible effect. !important reverses layer precedence (earlier
+    // layers win), which is the same technique custom.scss already uses
+    // for this identical quartz-themes-layer-ordering problem elsewhere.
+    background-color: var(--background-secondary) !important;
+    // Soft gradient shadow cast onto content scrolling underneath, so the
+    // bar reads as a raised surface instead of a hard-edged cutoff.
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.15);
     padding: 1rem 0 1rem 0;
     margin: 0;
   }
