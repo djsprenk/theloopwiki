@@ -82,6 +82,22 @@ Current forks:
   index still get the normal listing (this is how "has real content" is
   detected: the rendered HAST tree is non-empty vs. empty for
   auto-generated virtual folder pages).
+- `explorer` (`local-plugins/explorer/`) — the upstream
+  `github:quartz-community/explorer` plugin's `filterFn` option can only be
+  set via a TypeScript override (`quartz.ts`), not from
+  `quartz.config.yaml`, which this repo doesn't use. Forked to extend the
+  plugin's own default `filterFn` (which already excludes the `tags`
+  folder) to also exclude the top-level `Meta` folder — internal authoring
+  scaffolding (e.g. `.base` files backing embedded database views, see
+  `filter.py`'s `EXCLUDED_FOLDERS` in the sibling `theloopwiki-tools` repo)
+  that still needs to be built as a real page (so embeds of it render) but
+  shouldn't appear in site navigation, search, or the graph. Matches only a
+  folder named exactly `meta` at the vault root (`node.slugSegments.length
+=== 1`) — nested folders elsewhere named `Meta` are unaffected. Edited in
+  both `src/components/Explorer.tsx` (server-side default, gets
+  `.toString()`-serialized into each page's inline data) and
+  `src/components/scripts/explorer.inline.ts` (client-side fallback used
+  only if that serialized data fails to parse) — keep the two in sync.
 
 ## Folder click → specific page (not the auto listing)
 
@@ -92,7 +108,7 @@ Two related but distinct customizations exist for folder index pages:
   convention above). The `folder-page` fork's `hideListingWhenIndexed`
   handles the rest automatically — no extra frontmatter needed.
 - **Redirect straight to a different page entirely** (skip even your own
-  index content): add `aliases:` to the *target* page's frontmatter, with
+  index content): add `aliases:` to the _target_ page's frontmatter, with
   the full absolute slug of the folder's index page, e.g.:
 
   ```yaml

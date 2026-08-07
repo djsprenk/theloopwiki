@@ -50,7 +50,9 @@ const defaultOptions: ExplorerOptions = {
     }
     return -1;
   },
-  filterFn: (node: FileTrieNode) => node.slugSegment !== "tags",
+  filterFn: (node: FileTrieNode) =>
+    node.slugSegment !== "tags" &&
+    !(node.slugSegments?.length === 1 && node.slugSegment === "meta"),
   order: ["filter", "map", "sort"],
 };
 

@@ -97,7 +97,8 @@ const defaultSortFn = (a, b) => {
   return -1;
 };
 
-const defaultFilterFn = (node) => node.slugSegment !== "tags";
+const defaultFilterFn = (node) =>
+  node.slugSegment !== "tags" && !(node.slugSegments?.length === 1 && node.slugSegment === "meta");
 
 function processTrie(trie, sortFn, filterFn, mapFn) {
   if (filterFn) trie.filter(filterFn);
