@@ -1,0 +1,70 @@
+{
+  "name": "@theloopwiki/related-links",
+  "version": "0.1.0",
+  "description": "Renders a 'See Also' section from a note's `related` frontmatter property.",
+  "type": "module",
+  "license": "MIT",
+  "author": "The Loop",
+  "files": ["dist", "README.md"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "preact": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "@quartz-community/types": "github:quartz-community/types",
+    "@quartz-community/utils": "github:quartz-community/utils"
+  },
+  "devDependencies": {
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^24.10.0",
+    "preact": "^10.28.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "unist-util-visit": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "quartz": {
+    "name": "related-links",
+    "displayName": "Related Links",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 20,
+    "defaultEnabled": true,
+    "defaultOptions": {
+      "propertyName": "related",
+      "heading": "See Also"
+    },
+    "optionSchema": {
+      "propertyName": {
+        "type": "string"
+      },
+      "heading": {
+        "type": "string"
+      }
+    }
+  }
+}

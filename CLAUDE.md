@@ -99,6 +99,26 @@ Current forks:
   `src/components/scripts/explorer.inline.ts` (client-side fallback used
   only if that serialized data fails to parse) — keep the two in sync.
 
+Custom (non-fork) local plugins:
+
+- `related-links` (`local-plugins/related-links/`) — no upstream equivalent;
+  scaffolded from the `description`/`bases-page` plugin templates. A
+  markdown-stage transformer, registered at `order: 20` (between
+  `note-properties` at 5, which populates `file.data.frontmatter`, and
+  `obsidian-flavored-markdown` at 30, which converts `wikilink`-type mdast
+  nodes into real links). Reads a note's `related` frontmatter (a list of
+  `[[Target|Alias]]` wikilinks) and appends a `## See Also` heading plus an
+  Oxford-comma-joined paragraph of links to the end of the content tree —
+  omitted entirely when `related` is empty or absent. It constructs
+  `wikilink`-type mdast nodes directly (the same shape
+  `@quartz-community/remark-obsidian` produces for body wikilinks) rather
+  than resolving hrefs itself, so OFM and `crawl-links` (order 60) resolve
+  and style them identically to hand-written body links, including the same
+  non-blocking behavior for a dead/ambiguous target (renders as a link that
+  may 404, doesn't fail the build) — `filter.py`'s `extract_related_targets`
+  in the sibling `theloopwiki-tools` repo separately flags those during
+  publish.
+
 ## Folder click → specific page (not the auto listing)
 
 Two related but distinct customizations exist for folder index pages:

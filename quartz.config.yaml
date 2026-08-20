@@ -321,6 +321,12 @@ plugins:
     layout:
       position: right
       priority: 30
+  - source: ./local-plugins/related-links
+    enabled: true
+    options:
+      propertyName: related
+      heading: See Also
+    order: 20
 layout:
   groups:
     toolbar:

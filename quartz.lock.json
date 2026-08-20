@@ -222,6 +222,12 @@
       "commit": "3c3d104335e2fc5ff62371ead157667adb79b046",
       "installedAt": "2026-07-06T15:23:06.515Z"
     },
+    "related-links": {
+      "source": "./local-plugins/related-links",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/related-links",
+      "commit": "local",
+      "installedAt": "2026-08-20T21:12:05.306Z"
+    },
     "remove-draft": {
       "source": "github:quartz-community/remove-draft",
       "resolved": "https://github.com/quartz-community/remove-draft.git",
