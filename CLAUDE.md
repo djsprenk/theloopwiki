@@ -178,6 +178,19 @@ field, which means:
   password entered.
 - `static/encryptedContentIndex.json` is a companion "shadow" content index
   for `unlisted: true` encrypted pages, regenerated on every build.
+- `encrypted-pages` (`local-plugins/encrypted-pages/`) is itself forked
+  (not just configured) so its shadow-index entries carry `order?: number`,
+  populated from `frontmatter.order` in `buildShadowEntry`
+  (`src/emitter.ts`) the same way the `content-index` fork does for
+  unencrypted pages. Without this, an encrypted page's sidebar position was
+  always alphabetical: `unlisted: true` pages are excluded from
+  `contentIndex.json` entirely, so the client-side `explorer` fork's
+  `order`-aware `sortFn` had nothing to sort by until the shadow index
+  patches the decrypted entry back in at runtime
+  (`encrypted.inline.ts`'s `applyShadowPatches`, which fires a `render`
+  event `explorer` re-sorts on) — and that patch previously carried no
+  `order`, so newly-unlocked pages would sort to the alphabetical tail and
+  visibly reflow relative to any already-ordered siblings.
 
 See `docs/plugins/EncryptedPages.md` for the full plugin behavior
 (`unlisted` vs `stealth` pages, shadow index format, config options).

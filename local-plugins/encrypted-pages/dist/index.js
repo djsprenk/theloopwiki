@@ -2316,7 +2316,8 @@ function buildShadowEntry(data) {
       links,
       tags,
       content: "",
-      description: ""
+      description: "",
+      order: typeof frontmatter.order === "number" ? frontmatter.order : void 0
     }
   };
 }

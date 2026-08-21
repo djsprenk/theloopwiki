@@ -26,6 +26,7 @@ interface ShadowContentIndexEntry {
         tags: string[];
         content: string;
         description: string;
+        order?: number;
     };
 }
 declare const EncryptedContentIndex: QuartzEmitterPlugin<Partial<EncryptedContentIndexOptions>>;

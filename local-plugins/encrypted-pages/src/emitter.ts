@@ -38,6 +38,7 @@ export interface ShadowContentIndexEntry {
     tags: string[];
     content: string;
     description: string;
+    order?: number;
   };
 }
 
@@ -67,6 +68,7 @@ function buildShadowEntry(data: Record<string, unknown>): ShadowContentIndexEntr
       tags,
       content: "",
       description: "",
+      order: typeof frontmatter.order === "number" ? frontmatter.order : undefined,
     },
   };
 }
