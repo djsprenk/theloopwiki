@@ -93,11 +93,30 @@ Current forks:
   that still needs to be built as a real page (so embeds of it render) but
   shouldn't appear in site navigation, search, or the graph. Matches only a
   folder named exactly `meta` at the vault root (`node.slugSegments.length
-=== 1`) — nested folders elsewhere named `Meta` are unaffected. Edited in
+=== 1`) — nested folders elsewhere named `Meta` are unaffected. Also
+  extends the default `sortFn` to sort by a note's `order` frontmatter (the
+  same numeric field vault notes already use to sort rows in embedded Base
+  views, populated into `contentIndex.json` by the `content-index` fork
+  below): within each existing folders-vs-files group, items with an
+  explicit `order` sort first by that value ascending, and any remaining
+  items fall back to the prior alphanumeric-on-`displayName` behavior. A
+  folder's own `order` comes from its index page's frontmatter (same
+  `data` object used for `hideListingWhenIndexed` detection in
+  `folder-page`) — a folder with no authored index note has no `order` and
+  sorts into the alphabetical tail, same as before this change. Edited in
   both `src/components/Explorer.tsx` (server-side default, gets
   `.toString()`-serialized into each page's inline data) and
   `src/components/scripts/explorer.inline.ts` (client-side fallback used
   only if that serialized data fails to parse) — keep the two in sync.
+- `content-index` (`local-plugins/content-index/`) — the upstream
+  `github:quartz-community/content-index` plugin's `ContentDetails` type
+  (what becomes each entry in `static/contentIndex.json`, which
+  `explorer`, search, graph, backlinks, etc. all read) has no `order`
+  field, so a note's `order` frontmatter was invisible outside of Base
+  views. Forked to add `order?: number` to `ContentDetails` and populate it
+  from `frontmatter.order` in `emitAll` (left `undefined`, not `0`, when
+  absent or non-numeric) — no other behavior changed. This is what makes
+  the `explorer` fork's `order`-aware `sortFn` (above) possible.
 
 Custom (non-fork) local plugins:
 

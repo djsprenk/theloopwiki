@@ -39,6 +39,16 @@ const defaultOptions: ExplorerOptions = {
   },
   sortFn: (a: FileTrieNode, b: FileTrieNode) => {
     if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+      const aOrder = (a.data as { order?: unknown } | null)?.order;
+      const bOrder = (b.data as { order?: unknown } | null)?.order;
+      const aHasOrder = typeof aOrder === "number";
+      const bHasOrder = typeof bOrder === "number";
+      if (aHasOrder && bHasOrder && aOrder !== bOrder) {
+        return (aOrder as number) - (bOrder as number);
+      }
+      if (aHasOrder !== bHasOrder) {
+        return aHasOrder ? -1 : 1;
+      }
       return (a.displayName || "").localeCompare(b.displayName || "", undefined, {
         numeric: true,
         sensitivity: "base",

@@ -56,10 +56,10 @@
       "installedAt": "2026-07-06T15:23:06.488Z"
     },
     "content-index": {
-      "source": "github:quartz-community/content-index",
-      "resolved": "https://github.com/quartz-community/content-index.git",
-      "commit": "c3d4f5c85311712c3355cd71da46b28e2d8eba71",
-      "installedAt": "2026-07-06T15:23:02.984Z"
+      "source": "./local-plugins/content-index",
+      "resolved": "/Users/nathan/Development/theloopwiki-tools/quartz/local-plugins/content-index",
+      "commit": "local",
+      "installedAt": "2026-08-20T17:56:00.000Z"
     },
     "content-meta": {
       "source": "github:quartz-community/content-meta",

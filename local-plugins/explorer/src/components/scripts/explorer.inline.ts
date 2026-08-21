@@ -88,6 +88,12 @@ class FileTrieNode {
 // Process and sort nodes
 const defaultSortFn = (a, b) => {
   if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+    const aOrder = a.data?.order;
+    const bOrder = b.data?.order;
+    const aHasOrder = typeof aOrder === "number";
+    const bHasOrder = typeof bOrder === "number";
+    if (aHasOrder && bHasOrder && aOrder !== bOrder) return aOrder - bOrder;
+    if (aHasOrder !== bHasOrder) return aHasOrder ? -1 : 1;
     return a.displayName.localeCompare(b.displayName, undefined, {
       numeric: true,
       sensitivity: "base",
