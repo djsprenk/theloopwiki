@@ -8,11 +8,17 @@ export interface RelatedLinksOptions {
   propertyName: string;
   /** Heading text rendered above the links. */
   heading: string;
+  /** Frontmatter property holding a single "next page" wikilink. */
+  nextPropertyName: string;
+  /** Heading text rendered above the next-page link. */
+  nextHeading: string;
 }
 
 const defaultOptions: RelatedLinksOptions = {
   propertyName: "related",
   heading: "See Also",
+  nextPropertyName: "next",
+  nextHeading: "Next Up",
 };
 
 // Same shape @quartz-community/remark-obsidian produces for `[[Target|Alias]]`
@@ -69,26 +75,48 @@ export const RelatedLinks: QuartzTransformerPlugin<Partial<RelatedLinksOptions>>
           return (tree: Root, file: VFile) => {
             const rawValue = file.data.frontmatter?.[opts.propertyName];
             const links = parseWikilinks(rawValue);
-            if (links.length === 0) return;
+            if (links.length > 0) {
+              const wikilinkNodes: WikilinkNode[] = links.map(({ path, alias }) => ({
+                type: "wikilink",
+                path,
+                alias,
+                embedded: false,
+              }));
 
-            const wikilinkNodes: WikilinkNode[] = links.map(({ path, alias }) => ({
-              type: "wikilink",
-              path,
-              alias,
-              embedded: false,
-            }));
+              const heading: Heading = {
+                type: "heading",
+                depth: 2,
+                children: [{ type: "text", value: opts.heading }],
+              };
+              const paragraph: Paragraph = {
+                type: "paragraph",
+                children: joinOxfordComma(wikilinkNodes),
+              };
 
-            const heading: Heading = {
-              type: "heading",
-              depth: 2,
-              children: [{ type: "text", value: opts.heading }],
-            };
-            const paragraph: Paragraph = {
-              type: "paragraph",
-              children: joinOxfordComma(wikilinkNodes),
-            };
+              tree.children.push(heading, paragraph);
+            }
 
-            tree.children.push(heading, paragraph);
+            const rawNextValue = file.data.frontmatter?.[opts.nextPropertyName];
+            const [nextLink] = parseWikilinks(rawNextValue);
+            if (nextLink) {
+              const nextHeading: Heading = {
+                type: "heading",
+                depth: 2,
+                children: [{ type: "text", value: opts.nextHeading }],
+              };
+              const nextWikilinkNode: WikilinkNode = {
+                type: "wikilink",
+                path: nextLink.path,
+                alias: nextLink.alias,
+                embedded: false,
+              };
+              const nextParagraph: Paragraph = {
+                type: "paragraph",
+                children: [nextWikilinkNode as unknown as PhrasingContent],
+              };
+
+              tree.children.push(nextHeading, nextParagraph);
+            }
           };
         },
       ];

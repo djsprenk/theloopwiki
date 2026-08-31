@@ -5,7 +5,10 @@
   "type": "module",
   "license": "MIT",
   "author": "The Loop",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -56,13 +59,21 @@
     "defaultEnabled": true,
     "defaultOptions": {
       "propertyName": "related",
-      "heading": "See Also"
+      "heading": "See Also",
+      "nextPropertyName": "next",
+      "nextHeading": "Next Up"
     },
     "optionSchema": {
       "propertyName": {
         "type": "string"
       },
       "heading": {
+        "type": "string"
+      },
+      "nextPropertyName": {
+        "type": "string"
+      },
+      "nextHeading": {
         "type": "string"
       }
     }

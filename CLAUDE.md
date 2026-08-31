@@ -134,15 +134,19 @@ Custom (non-fork) local plugins:
   nodes into real links). Reads a note's `related` frontmatter (a list of
   `[[Target|Alias]]` wikilinks) and appends a `## See Also` heading plus an
   Oxford-comma-joined paragraph of links to the end of the content tree —
-  omitted entirely when `related` is empty or absent. It constructs
-  `wikilink`-type mdast nodes directly (the same shape
+  omitted entirely when `related` is empty or absent. Also reads a `next`
+  frontmatter field (a single `[[Target|Alias]]` wikilink, not a list) and,
+  if present, appends a `## Next Up` heading plus a single-link paragraph
+  _after_ the `See Also` block — this is what replaces a hand-typed "Next
+  lesson: [[...]]" line at the bottom of course pages. Both sections
+  construct `wikilink`-type mdast nodes directly (the same shape
   `@quartz-community/remark-obsidian` produces for body wikilinks) rather
   than resolving hrefs itself, so OFM and `crawl-links` (order 60) resolve
   and style them identically to hand-written body links, including the same
   non-blocking behavior for a dead/ambiguous target (renders as a link that
-  may 404, doesn't fail the build) — `filter.py`'s `extract_related_targets`
-  in the sibling `theloopwiki-tools` repo separately flags those during
-  publish.
+  may 404, doesn't fail the build) — `filter.py`'s
+  `extract_frontmatter_link_targets` in the sibling `theloopwiki-tools` repo
+  separately flags those (for both `related` and `next`) during publish.
 
 ## Folder click → specific page (not the auto listing)
 

@@ -326,6 +326,8 @@ plugins:
     options:
       propertyName: related
       heading: See Also
+      nextPropertyName: next
+      nextHeading: Next Up
     order: 20
 layout:
   groups:

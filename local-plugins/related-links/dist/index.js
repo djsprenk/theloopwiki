@@ -1,7 +1,9 @@
 // src/transformer.ts
 var defaultOptions = {
   propertyName: "related",
-  heading: "See Also"
+  heading: "See Also",
+  nextPropertyName: "next",
+  nextHeading: "Next Up"
 };
 var WIKILINK_PATTERN = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 function parseWikilinks(value) {
@@ -41,23 +43,44 @@ var RelatedLinks = (userOpts) => {
           return (tree, file) => {
             const rawValue = file.data.frontmatter?.[opts.propertyName];
             const links = parseWikilinks(rawValue);
-            if (links.length === 0) return;
-            const wikilinkNodes = links.map(({ path, alias }) => ({
-              type: "wikilink",
-              path,
-              alias,
-              embedded: false
-            }));
-            const heading = {
-              type: "heading",
-              depth: 2,
-              children: [{ type: "text", value: opts.heading }]
-            };
-            const paragraph = {
-              type: "paragraph",
-              children: joinOxfordComma(wikilinkNodes)
-            };
-            tree.children.push(heading, paragraph);
+            if (links.length > 0) {
+              const wikilinkNodes = links.map(({ path, alias }) => ({
+                type: "wikilink",
+                path,
+                alias,
+                embedded: false
+              }));
+              const heading = {
+                type: "heading",
+                depth: 2,
+                children: [{ type: "text", value: opts.heading }]
+              };
+              const paragraph = {
+                type: "paragraph",
+                children: joinOxfordComma(wikilinkNodes)
+              };
+              tree.children.push(heading, paragraph);
+            }
+            const rawNextValue = file.data.frontmatter?.[opts.nextPropertyName];
+            const [nextLink] = parseWikilinks(rawNextValue);
+            if (nextLink) {
+              const nextHeading = {
+                type: "heading",
+                depth: 2,
+                children: [{ type: "text", value: opts.nextHeading }]
+              };
+              const nextWikilinkNode = {
+                type: "wikilink",
+                path: nextLink.path,
+                alias: nextLink.alias,
+                embedded: false
+              };
+              const nextParagraph = {
+                type: "paragraph",
+                children: [nextWikilinkNode]
+              };
+              tree.children.push(nextHeading, nextParagraph);
+            }
           };
         }
       ];

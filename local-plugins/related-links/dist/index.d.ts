@@ -6,6 +6,10 @@ interface RelatedLinksOptions {
     propertyName: string;
     /** Heading text rendered above the links. */
     heading: string;
+    /** Frontmatter property holding a single "next page" wikilink. */
+    nextPropertyName: string;
+    /** Heading text rendered above the next-page link. */
+    nextHeading: string;
 }
 declare const RelatedLinks: QuartzTransformerPlugin<Partial<RelatedLinksOptions>>;
 
