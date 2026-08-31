@@ -142,7 +142,7 @@ plugins:
     enabled: true
   - source: github:quartz-community/tag-page
     enabled: true
-  - source: github:quartz-community/search
+  - source: ./local-plugins/search
     enabled: true
     layout:
       position: left

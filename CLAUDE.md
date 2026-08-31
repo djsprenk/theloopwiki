@@ -63,6 +63,12 @@ Then re-run `npx quartz build` to pick up the new `dist/`.
 
 Current forks:
 
+- `search` (`local-plugins/search/`) — the upstream
+  `github:quartz-community/search` plugin hardcodes the search overlay's
+  backdrop blur (`backdrop-filter: blur(4px)` in
+  `src/components/styles/search.scss`) with no config option for it.
+  Forked solely to bump that literal to `blur(30px)` for a stronger
+  frosted-glass effect behind the search modal — no other behavior changed.
 - `footer` (`local-plugins/footer/`) — the upstream
   `github:quartz-community/footer` plugin only exposes a `links` option,
   not the footer message text. Forked to render "The Loop © {year} -
