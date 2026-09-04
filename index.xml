@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-      <title>The Loop Wiki</title>
+      <title>The Loop DJ Wiki</title>
       <link>https://wiki.theloop.community</link>
-      <description>Last 10 notes on The Loop Wiki</description>
+      <description>Last 10 notes on The Loop DJ Wiki</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Maps of Content</title>
+    <link>https://wiki.theloop.community/meta/maps-of-content.base</link>
+    <guid>https://wiki.theloop.community/meta/maps-of-content.base</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
+  </item><item>
+    <title>loop-academy</title>
+    <link>https://wiki.theloop.community/tags/loop-academy</link>
+    <guid>https://wiki.theloop.community/tags/loop-academy</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
+  </item><item>
+    <title>moc</title>
+    <link>https://wiki.theloop.community/tags/moc</link>
+    <guid>https://wiki.theloop.community/tags/moc</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
+  </item><item>
     <title>Tag Index</title>
     <link>https://wiki.theloop.community/tags/</link>
     <guid>https://wiki.theloop.community/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 13:41:42 GMT</pubDate>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
   </item><item>
-    <title>Month 2 - Assignment &amp; Reflections</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-assignment</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-assignment</guid>
+    <title>Audio Engineering</title>
+    <link>https://wiki.theloop.community/wiki/audio-engineering/</link>
+    <guid>https://wiki.theloop.community/wiki/audio-engineering/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
   </item><item>
-    <title>Month 2.2 - Discovering Music With Intention</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-discovering-music-with-intention</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-discovering-music-with-intention</guid>
+    <title>Wiki</title>
+    <link>https://wiki.theloop.community/wiki/</link>
+    <guid>https://wiki.theloop.community/wiki/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
   </item><item>
-    <title>Month 2.3 - Etiquette &amp; Getting Your Music the Right Way</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-etiquette-and-getting-music</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-etiquette-and-getting-music</guid>
+    <title>Branding</title>
+    <link>https://wiki.theloop.community/wiki/branding/</link>
+    <guid>https://wiki.theloop.community/wiki/branding/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
   </item><item>
-    <title>Month 2.4 - Etiquette &amp; Getting Your Music the Right Way</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-finding-your-musical-identity</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-finding-your-musical-identity</guid>
+    <title>Community</title>
+    <link>https://wiki.theloop.community/wiki/community/</link>
+    <guid>https://wiki.theloop.community/wiki/community/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
   </item><item>
-    <title>Month 2 - Introduction</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-introduction</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-introduction</guid>
+    <title>Creativity</title>
+    <link>https://wiki.theloop.community/wiki/creativity/</link>
+    <guid>https://wiki.theloop.community/wiki/creativity/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
   </item><item>
-    <title>Month 2.5 - Learning From Other DJs</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-learning-from-other-djs</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-learning-from-other-djs</guid>
+    <title>DJ Hardware</title>
+    <link>https://wiki.theloop.community/wiki/dj-hardware/</link>
+    <guid>https://wiki.theloop.community/wiki/dj-hardware/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
-  </item><item>
-    <title>02 - Music Discovery &amp; Identity</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
-  </item><item>
-    <title>Month 2.6 - Introducing The Loop Compass</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-the-loop-compass</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-the-loop-compass</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
-  </item><item>
-    <title>Month 2.1 - Why We Like the Music We Like</title>
-    <link>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-why-we-like-the-music-we-like</link>
-    <guid>https://wiki.theloop.community/the-loop-academy/02-music-discovery--and--identity/02-why-we-like-the-music-we-like</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 31 Aug 2026 00:05:27 GMT</pubDate>
+    <pubDate>Fri, 04 Sep 2026 17:41:02 GMT</pubDate>
   </item>
     </channel>
   </rss>
